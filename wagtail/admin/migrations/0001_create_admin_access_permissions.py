@@ -2,7 +2,7 @@
 from django.db import migrations
 
 
-def create_admin_access_permissions(apps, schema_editor):
+def create_admin_access_permissions(apps, _schema_editor):
     ContentType = apps.get_model('contenttypes.ContentType')
     Permission = apps.get_model('auth.Permission')
     Group = apps.get_model('auth.Group')
@@ -26,7 +26,7 @@ def create_admin_access_permissions(apps, schema_editor):
         group.permissions.add(admin_permission)
 
 
-def remove_admin_access_permissions(apps, schema_editor):
+def remove_admin_access_permissions(apps, _schema_editor):
     """Reverse the above additions of permissions."""
     ContentType = apps.get_model('contenttypes.ContentType')
     Permission = apps.get_model('auth.Permission')
