@@ -9,7 +9,7 @@ def create_admin_access_permissions(apps, _schema_editor):
 
     # Add a fake content type to hang the 'can access Wagtail admin' permission off.
     # The fact that this doesn't correspond to an actual defined model shouldn't matter, I hope...
-    wagtailadmin_content_type, created = ContentType.objects.get_or_create(
+    wagtailadmin_content_type, _ = ContentType.objects.get_or_create(
         app_label='wagtailadmin',
         model='admin'
     )
